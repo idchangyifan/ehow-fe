@@ -25,23 +25,33 @@
                     <input class="weui-input" type="text" placeholder="请输入公司国家或地区" required emptyTips="此栏必填写" v-model="informations.regionName"/>
                 </div>
             </div>
-            <div class="weui-cell weui-cell_vcode">
-                <div class="weui-cell__hd">
-                    <label class="weui-label">联系方式：</label>
-                </div>
-                <div class="weui-cell__bd">
-                    <input class="weui-input" type="tel" placeholder="请输入11位手机号"  required pattern="[0-9]{11}" emptyTips="此栏必填写" notMatchTips="请输入正确的手机号" v-model="informations.phoneNumber">
-                </div>
-                <!--                <div class="weui-cell__ft">-->
-                <!--                    <a href="javascript:;" class="weui-vcode-btn">获取验证码</a>-->
-                <!--                </div>-->
-            </div>
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">类似业绩：</label></div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement"/>
                 </div>
             </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">联系人：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入公司联系人" required emptyTips="此栏必填写"  v-model="informations.contact"/>
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_vcode">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">联系人手机：</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="tel" placeholder="请输入11位手机号"  required pattern="[0-9]{11}" emptyTips="此栏必填写" notMatchTips="请输入正确的手机号" v-model="informations.phoneNumber">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">联系人邮箱：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="email" placeholder="请输入邮箱" required emptyTips="此栏必填写"  v-model="informations.emailAddress"/>
+                </div>
+            </div>
+
 
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">主要成员：</label></div>
@@ -83,7 +93,9 @@
                     teamMember: "",
                     projectName:"",
                     projectCode:"",
-                    expireDate:""
+                    expireDate:"",
+                    emailAddress:"",
+                    contact:""
                 },
                 projects: [],
                 chooseProject:true
