@@ -26,9 +26,33 @@
                 </div>
             </div>
             <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">类似业绩：</label></div>
+                <div class="weui-cell__hd"><label class="weui-label">类似业绩1：</label></div>
                 <div class="weui-cell__bd">
-                    <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement"/>
+                    <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement1"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">类似业绩2：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement2"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">类似业绩3：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement3"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">类似业绩4：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement4"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">类似业绩5：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement5"/>
                 </div>
             </div>
             <div class="weui-cell">
@@ -72,21 +96,16 @@
 
     import 'weui';
     import weui from 'weui.js';
-    // weui.form.validate('#form', function (error) {
-    //     if (!error) {
-    //         var loading =  Vue.$weui.loading('提交中...');
-    //         setTimeout(function () {
-    //             loading.hide();
-    //             Vue.$weui.toast('提交成功', 3000);
-    //         }, 1500);
-    //     }
-    //     // return true; // 当return true时，不会显示错误
-    // },);
+
     export default {
         data() {
             return {
                 informations: {
-                    companyAchievement: "",
+                    companyAchievement1: "",
+                    companyAchievement2: "",
+                    companyAchievement3: "",
+                    companyAchievement4: "",
+                    companyAchievement5: "",
                     companyName: "",
                     phoneNumber: "",
                     regionName: "",
@@ -103,7 +122,7 @@
         },
         methods: {
             submit() {
-                const url = 'http://106.52.245.156:9527/api/enroll';
+                const url = 'http://127.0.0.1:9527/api/enroll';
                 const formData = JSON.stringify(this.informations); // this指向这个VUE实例 data默认绑定在实例下的。所以直接this.student就是要提交的数据
                 this.$http.post(url, formData).then(function () {
                         alert("报名成功！");
