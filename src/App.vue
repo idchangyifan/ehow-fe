@@ -5,7 +5,7 @@
         <div v-show="chooseProject">
             <div class="weui-cells__title">请选择项目</div>
             <li v-for="(project, index) in projects" v-bind:key="index">
-                <button v-on:click="changeChooseProjectModle(project)" class="weui-btn weui-btn_primary">{{ project.projectName }}</button>
+                <button v-on:click="changeChooseProjectModle(project)" class="weui-btn weui-btn_primary" v-if="project.ongoing === 1">{{ project.projectName }}</button>
                 <br>
             </li>
         </div>
