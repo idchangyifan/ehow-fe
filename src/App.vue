@@ -26,33 +26,75 @@
                 </div>
             </div>
             <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">类似业绩1：</label></div>
+                <div class="weui-cell__hd"><label class="weui-label">公司业绩1：</label></div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement1"/>
                 </div>
             </div>
             <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">类似业绩2：</label></div>
+                <div class="weui-cell__hd"><label class="weui-label">公司业绩2：</label></div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement2"/>
                 </div>
             </div>
             <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">类似业绩3：</label></div>
+                <div class="weui-cell__hd"><label class="weui-label">公司业绩3：</label></div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement3"/>
                 </div>
             </div>
             <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">类似业绩4：</label></div>
+                <div class="weui-cell__hd"><label class="weui-label">公司业绩4：</label></div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement4"/>
                 </div>
             </div>
             <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">类似业绩5：</label></div>
+                <div class="weui-cell__hd"><label class="weui-label">公司业绩5：</label></div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.companyAchievement5"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">主创团队：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入公司主创团队成员" required emptyTips="此栏必填写" v-model="informations.teamMember"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">主创业绩1：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.memberAchievement1"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">主创业绩2：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.memberAchievement2"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">主创业绩3：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.memberAchievement3"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">主创业绩4：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.memberAchievement4"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">主创业绩5：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"  v-model="informations.memberAchievement5"/>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">主创获奖：</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入主创团队获奖情况,没有请填无" required emptyTips="此栏必填写"  v-model="informations.memberAward"/>
                 </div>
             </div>
             <div class="weui-cell">
@@ -77,12 +119,7 @@
             </div>
 
 
-            <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">主要成员：</label></div>
-                <div class="weui-cell__bd">
-                    <input class="weui-input" type="text" placeholder="请输入公司主要成员" required emptyTips="此栏必填写" v-model="informations.teamMember"/>
-                </div>
-            </div>
+
             <div class="weui-btn-area">
                 <button class="weui-btn weui-btn_primary" type="primary" formType="submit">提交报名</button>
             </div>
@@ -106,6 +143,12 @@
                     companyAchievement3: "",
                     companyAchievement4: "",
                     companyAchievement5: "",
+                    memberAchievement1: "",
+                    memberAchievement2: "",
+                    memberAchievement3: "",
+                    memberAchievement4: "",
+                    memberAchievement5: "",
+                    memberAward: "",
                     companyName: "",
                     phoneNumber: "",
                     regionName: "",
