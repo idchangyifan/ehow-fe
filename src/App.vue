@@ -165,7 +165,7 @@
         },
         methods: {
             submit() {
-                const url = 'http://127.0.0.1:9527/api/enroll';
+                const url = 'http://106.52.245.156:9527/api/enroll';
                 const formData = JSON.stringify(this.informations); // this指向这个VUE实例 data默认绑定在实例下的。所以直接this.student就是要提交的数据
                 this.$http.post(url, formData).then(function () {
                         alert("报名成功！");
