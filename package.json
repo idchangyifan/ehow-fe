@@ -13,7 +13,9 @@
     "vue": "^2.6.10",
     "vue-resource": "^1.5.1",
     "weui": "^2.0.1",
-    "weui.js": "^1.2.1"
+    "weui.js": "^1.2.1",
+    "vue-router": "latest"
+
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
@@ -25,7 +27,8 @@
     "vue-template-compiler": "^2.6.10",
     "bootstrap": "^3.4.0",
     "jquery": "^3.3.1",
-    "weui": "^2.0.1"
+    "weui": "^2.0.1",
+    "vue-router": "latest"
   },
   "eslintConfig": {
     "root": true,
