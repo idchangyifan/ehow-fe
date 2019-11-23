@@ -2,8 +2,6 @@
 
     <div id="app">
         <head><title>一和研发</title></head>
-        <button><router-link to="/project">申报项目</router-link></button>
-        <button><router-link to="/modifyUserInfo">查看/修改资料</router-link></button>
         <router-view></router-view>
     </div>
 </template>
