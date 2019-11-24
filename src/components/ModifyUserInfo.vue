@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="modifyUserInfo">
-            <head><title>一和研发</title></head>
+            <head><title></title></head>
             <form @submit.prevent="submit">
                 <div class="weui-cells__title">修改用户信息</div>
                 <div class="weui-cells weui-cells_form">

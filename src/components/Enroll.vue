@@ -1,15 +1,14 @@
 <template>
     <div id="enroll">
-        <head><title>一和研发</title></head>
+        <head><title></title></head>
         <form @submit.prevent="submit">
-
-
             <div class="weui-cells__title"><font size="4">{{project.projectName}}项目登记报名</font></div>
             <div class="weui-cells weui-cells_form">
                 <div class="weui-cell weui-cell_select" v-if="project.allowUnion==='1'">
                     <div class="weui-cell__hd"><label class="weui-label">&nbsp;&nbsp;&nbsp;&nbsp;申报方式：</label></div>
                     <div class="weui-cell__bd">
-                        <select class="weui-select" name="select1" v-model="informations.unionTypeCode" v-on:click="checkUnionType">
+                        <select class="weui-select" name="select1" v-model="informations.unionTypeCode"
+                                v-on:click="checkUnionType">
                             <option selected value="0">独立申报</option>
                             <option value="1">作为牵头公司联合申报</option>
                             <option value="2">联合申报</option>
@@ -27,46 +26,26 @@
                 <div class="weui-cell" v-if="asFollower">
                     <div class="weui-cell__hd"><label class="weui-label">牵头公司代码：</label></div>
                     <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="联合申报请填写牵头公司联合申报专属id" v-on:blur="checkLeaderCodeExist" required emptyTips="此栏必填写"
+                        <input class="weui-input" type="text" placeholder="联合申报请填写牵头公司联合申报专属id"
+                               v-on:blur="checkLeaderCodeExist" required emptyTips="此栏必填写"
                                v-model="informations.leaderCompanyId"/>
                     </div>
                 </div>
 
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">公司业绩1：</label></div>
+                <div class="weui-cell" v-for="(companyAchievement, index0) in companyAchievementList" v-bind:key="index0">
+
+                    <div class="weui-cell__hd"><label class="weui-label">公司业绩：</label></div>
                     <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.companyAchievement1"/>
+                        <input width="10" class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"
+                               v-model="companyAchievementList[index0]"/>
+                    </div>
+                    <div>
+                        <button class="weui-btn weui-btn_mini weui-btn_default" v-on:click.prevent="addCompanyAchievement">+</button>
+                        &nbsp;
+                        <button class="weui-btn weui-btn_mini weui-btn_default" v-on:click.prevent="deleteCompanyAchievement(index0)">-</button>
                     </div>
                 </div>
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">公司业绩2：</label></div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.companyAchievement2"/>
-                    </div>
-                </div>
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">公司业绩3：</label></div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.companyAchievement3"/>
-                    </div>
-                </div>
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">公司业绩4：</label></div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.companyAchievement4"/>
-                    </div>
-                </div>
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">公司业绩5：</label></div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.companyAchievement5"/>
-                    </div>
-                </div>
+
                 <div class="weui-cell">
                     <div class="weui-cell__hd"><label class="weui-label">主创团队：</label></div>
                     <div class="weui-cell__bd">
@@ -74,52 +53,24 @@
                                v-model="informations.teamMember"/>
                     </div>
                 </div>
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">主创业绩1：</label></div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.memberAchievement1"/>
-                    </div>
-                </div>
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">主创业绩2：</label></div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.memberAchievement2"/>
-                    </div>
-                </div>
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">主创业绩3：</label></div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.memberAchievement3"/>
-                    </div>
-                </div>
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">主创业绩4：</label></div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.memberAchievement4"/>
-                    </div>
-                </div>
-                <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">主创业绩5：</label></div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入主创团队类似业绩,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.memberAchievement5"/>
-                    </div>
-                </div>
-                <div class="weui-cell">
+
+
+                <div class="weui-cell" v-for="(memberAchievement, index1) in memberAchievementList" v-bind:key="index1">
                     <div class="weui-cell__hd"><label class="weui-label">主创获奖：</label></div>
                     <div class="weui-cell__bd">
                         <input class="weui-input" type="text" placeholder="请输入主创团队获奖情况,没有请填无" required emptyTips="此栏必填写"
-                               v-model="informations.memberAward"/>
+                               v-model="memberAchievementList[index1]"/>
+                    </div>
+                    <div>
+                        <button class="weui-btn weui-btn_mini weui-btn_default" v-on:click.prevent="addMemberAchievement">+</button>
+                        &nbsp;
+                        <button class="weui-btn weui-btn_mini weui-btn_default" v-on:click.prevent="deleteMemberAchievement(index1)">-</button>
                     </div>
                 </div>
 
 
                 <div class="weui-btn-area">
-                    <button class="weui-btn weui-btn_primary" type="primary" formType="submit">提交/修改报名</button>
+                    <button class="weui-btn weui-btn_primary" type="primary" v-on:click="submit">提交/修改报名</button>
                 </div>
             </div>
         </form>
@@ -131,17 +82,11 @@
         name: "Enroll",
         data() {
             return {
+                companyAchievementList: [""],
+                memberAchievementList: [""],
                 informations: {
-                    companyAchievement1: '',
-                    companyAchievement2: '',
-                    companyAchievement3: '',
-                    companyAchievement4: '',
-                    companyAchievement5: '',
-                    memberAchievement1: '',
-                    memberAchievement2: '',
-                    memberAchievement3: '',
-                    memberAchievement4: '',
-                    memberAchievement5: '',
+                    companyAchievement: '1.',
+                    memberAchievement: '',
                     memberAward: '',
                     companyName: '',
                     phoneNumber: '',
@@ -162,14 +107,41 @@
                     projectCode: '',
                     expireDate: '',
                     allowUnion: '',
-                    maxUnionNumbers: 0
+                    maxUnionNumbers: 0,
+                    companyAchieveNumbers: 0,
+                    memberAchieveNumbers: 0
+
                 },
                 asLeader: false,
                 asFollower: false,
-                tips:""
+                tips: ""
             };
         },
         methods: {
+            addMemberAchievement() {
+                if (this.memberAchievementList.length < this.project.memberAchieveNumbers) {
+                    this.memberAchievementList.push("");
+                } else {
+                    alert("此项目最大主创业绩填写数为" + this.project.memberAchieveNumbers + "条");
+                }
+            },
+            deleteMemberAchievement(index) {
+                if (this.memberAchievementList.length > 1) {
+                    let a = this.memberAchievementList.splice(index, 1);
+                }
+            },
+            deleteCompanyAchievement(index) {
+                if (this.companyAchievementList.length > 1) {
+                    let a = this.companyAchievementList.splice(index, 1);
+                }
+            },
+            addCompanyAchievement() {
+                if (this.companyAchievementList.length < this.project.companyAchieveNumbers) {
+                    this.companyAchievementList.push("");
+                } else {
+                    alert("此项目最大公司业绩填写数为" + this.project.companyAchieveNumbers + "条")
+                }
+            },
             checkLeaderCodeExist() {
                 let url = this.GLOBAL.serverUrl + 'api/checkLeaderCodeExist/' + this.informations.leaderCompanyId;
                 this.$http.get(url, {emulateJSON: true, credentials: true}).then().catch(function () {
@@ -205,6 +177,8 @@
             },
             submit() {
                 const url = this.GLOBAL.serverUrl + 'api/enroll';
+                this.informations.companyAchievement = this.companyAchievementList.join('@');
+                this.informations.memberAchievement = this.memberAchievementList.join('@');
                 const formData = JSON.stringify(this.informations); // this指向这个VUE实例 data默认绑定在实例下的。所以直接this.student就是要提交的数据
                 this.$http.post(url, formData).then(function () {
                     alert("报名成功！");
@@ -231,6 +205,8 @@
                         this.$http.get(url, {emulateJSON: true, credentials: true}).then(response => {
                             if (response.data.data) {
                                 this.informations = response.data.data;
+                                this.companyAchievementList = this.informations.companyAchievement.split('@');
+                                this.memberAchievementList = this.informations.memberAchievement.split('@');
                                 if (this.informations.unionTypeCode === '0') {
                                     this.asFollower = false;
                                     this.asLeader = false;
@@ -243,9 +219,9 @@
                                 }
                             }
                         });
-                            /*.catch(function () {
-                                alert("服务器异常")
-                            });*/
+                        /*.catch(function () {
+                            alert("服务器异常")
+                        });*/
                         if (!this.informations.userId) {
                             this.informations.projectName = this.project.projectName;
                             this.informations.projectCode = this.project.projectCode;

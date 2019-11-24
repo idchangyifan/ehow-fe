@@ -1,7 +1,7 @@
 <template xmlns="http://www.w3.org/1999/html">
 
     <div id="app">
-        <head><title>一和研发</title></head>
+        <head><title></title></head>
         <router-view></router-view>
     </div>
 </template>

@@ -1,7 +1,7 @@
 <template xmlns="http://www.w3.org/1999/html">
 
     <div id="project">
-        <head><title>一和研发</title></head>
+        <head><title></title></head>
 
         <div class="weui-cells__title">请选择项目</div>
         <li v-for="(project, index) in projects" v-bind:key="index">

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="register">
-            <head><title>一和研发</title></head>
+            <head><title></title></head>
             <form @submit.prevent="submit">
                 <div class="weui-cells__title">欢迎注册一和研发</div>
                 <div class="weui-cells weui-cells_form">
