@@ -1,6 +1,6 @@
 <template>
     <div id="enroll">
-        <head><title>一和研发</title></head>
+        <head><title></title></head>
         <form @submit.prevent="submit">
             <div class="weui-cells__title"><font size="4">{{project.projectName}}项目登记报名</font></div>
             <div class="weui-cells weui-cells_form">
