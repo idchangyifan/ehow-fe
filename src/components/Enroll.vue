@@ -36,7 +36,7 @@
 
                     <div class="weui-cell__hd"><label class="weui-label">公司业绩：</label></div>
                     <div class="weui-cell__bd">
-                        <input width="10" class="weui-input" type="text" placeholder="请输入公司类似业绩,没有请填无" required emptyTips="此栏必填写"
+                        <input width="10" class="weui-input" type="text" placeholder="每行仅限填写一个业绩，点击+可增加" required emptyTips="此栏必填写"
                                v-model="companyAchievementList[index0]"/>
                     </div>
                     <div>
@@ -58,7 +58,7 @@
                 <div class="weui-cell" v-for="(memberAchievement, index1) in memberAchievementList" v-bind:key="index1">
                     <div class="weui-cell__hd"><label class="weui-label">主创业绩：</label></div>
                     <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入主创业绩，没有请填无" required emptyTips="此栏必填写"
+                        <input class="weui-input" type="text" placeholder="每行仅限填写一个业绩，点击+可增加" required emptyTips="此栏必填写"
                                v-model="memberAchievementList[index1]"/>
                     </div>
                     <div>
