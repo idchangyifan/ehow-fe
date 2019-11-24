@@ -40,9 +40,9 @@
                                v-model="companyAchievementList[index0]"/>
                     </div>
                     <div>
-                        <button class="weui-btn weui-btn_mini weui-btn_default" v-on:click.prevent="addCompanyAchievement">+</button>
+                        <button class="weui-btn weui-btn_mini weui-btn_primary" v-on:click.prevent="addCompanyAchievement">+</button>
                         &nbsp;
-                        <button class="weui-btn weui-btn_mini weui-btn_default" v-on:click.prevent="deleteCompanyAchievement(index0)">-</button>
+                        <button class="weui-btn weui-btn_mini weui-btn_primary" v-on:click.prevent="deleteCompanyAchievement(index0)">-</button>
                     </div>
                 </div>
 
@@ -56,18 +56,25 @@
 
 
                 <div class="weui-cell" v-for="(memberAchievement, index1) in memberAchievementList" v-bind:key="index1">
-                    <div class="weui-cell__hd"><label class="weui-label">主创获奖：</label></div>
+                    <div class="weui-cell__hd"><label class="weui-label">主创业绩：</label></div>
                     <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入主创团队获奖情况,没有请填无" required emptyTips="此栏必填写"
+                        <input class="weui-input" type="text" placeholder="请输入主创业绩，没有请填无" required emptyTips="此栏必填写"
                                v-model="memberAchievementList[index1]"/>
                     </div>
                     <div>
-                        <button class="weui-btn weui-btn_mini weui-btn_default" v-on:click.prevent="addMemberAchievement">+</button>
+                        <button class="weui-btn weui-btn_mini weui-btn_primary" v-on:click.prevent="addMemberAchievement">+</button>
                         &nbsp;
-                        <button class="weui-btn weui-btn_mini weui-btn_default" v-on:click.prevent="deleteMemberAchievement(index1)">-</button>
+                        <button class="weui-btn weui-btn_mini weui-btn_primary" v-on:click.prevent="deleteMemberAchievement(index1)">-</button>
                     </div>
                 </div>
 
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">主创获奖：</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入公司主创成员获奖情况，没有请填无" required emptyTips="此栏必填写"
+                               v-model="informations.memberAward"/>
+                    </div>
+                </div>
 
                 <div class="weui-btn-area">
                     <button class="weui-btn weui-btn_primary" type="primary" v-on:click="submit">提交/修改报名</button>
