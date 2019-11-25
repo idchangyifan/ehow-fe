@@ -3,7 +3,7 @@
         <div id="register">
             <head><title></title></head>
             <form @submit.prevent="submit">
-                <div class="weui-cells__title">欢迎注册一和研发</div>
+                <div class="weui-cells__title">欢迎注册</div>
                 <div class="weui-cells weui-cells_form">
                     <div class="weui-cell">
                         <div class="weui-cell__hd"><label class="weui-label">账号：</label></div>

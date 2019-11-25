@@ -116,7 +116,8 @@
                     allowUnion: '',
                     maxUnionNumbers: 0,
                     companyAchieveNumbers: 0,
-                    memberAchieveNumbers: 0
+                    memberAchieveNumbers: 0,
+                    tips: ''
 
                 },
                 asLeader: false,
@@ -203,6 +204,9 @@
                 let url1 = this.GLOBAL.serverUrl + 'api/getProjectByCode/' + projectCode;
                 this.$http.get(url1, {emulateJSON: true, credentials: true}).then(response => {
                     this.project = response.data.data;
+                    if (this.project.tips) {
+                        alert(this.project.tips);
+                    }
                     const now = new Date();
                     const expire = new Date(this.project.expireDate)
                     if (expire.getTime() < now.getTime()) {
