@@ -8,7 +8,7 @@
                     <div class="weui-cell__hd"><label class="weui-label">&nbsp;&nbsp;&nbsp;&nbsp;申报方式：</label></div>
                     <div class="weui-cell__bd">
                         <select class="weui-select" name="select1" v-model="informations.unionTypeCode"
-                                v-on:click="checkUnionType">
+                                v-on:change="checkUnionType">
                             <option selected value="0">独立申报</option>
                             <option value="1">作为牵头公司联合申报</option>
                             <option value="2">联合申报</option>
