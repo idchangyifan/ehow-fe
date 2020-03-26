@@ -69,9 +69,9 @@
                 </div>
 
                 <div class="weui-cell">
-                    <div class="weui-cell__hd"><label class="weui-label">主创获奖：</label></div>
+                    <div class="weui-cell__hd"><label class="weui-label">获得奖项：</label></div>
                     <div class="weui-cell__bd">
-                        <input class="weui-input" type="text" placeholder="请输入公司主创成员获奖情况，没有请填无" required emptyTips="此栏必填写"
+                        <input class="weui-input" type="text" placeholder="请分别输入公司或主创成员获奖情况，没有请填无" required emptyTips="此栏必填写"
                                v-model="informations.memberAward"/>
                     </div>
                 </div>
